@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>我的小站 | monkeyby</title>
+  <title>初识CSS | monkeyby</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习前端也有三个月了，一直想建立一个personal　site。趁着国庆有空就马上注册了个域名，可惜没有名字全拼。做站过程也是曲折，github　pages、hexo不了解，看着网上教程一步一步做，因为教程旧、版本上有些问题，中间也踩了很多坑。">
+  <meta name="description" content="块级元素：&amp;lt;div&amp;gt;、 &amp;lt;p&amp;gt;、&amp;lt;h1&amp;gt;、&amp;lt;form&amp;gt;、&amp;lt;ul&amp;gt;和&amp;lt;li&amp;gt;…a {display:block;}可将内联元素转换成块状元素">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的小站">
-<meta property="og:url" content="http://yoursite.com/2016/10/04/我的小站/index.html">
+<meta property="og:title" content="初识CSS">
+<meta property="og:url" content="http://yoursite.com/2016/10/06/初识CSS/index.html">
 <meta property="og:site_name" content="monkeyby">
-<meta property="og:description" content="学习前端也有三个月了，一直想建立一个personal　site。趁着国庆有空就马上注册了个域名，可惜没有名字全拼。做站过程也是曲折，github　pages、hexo不了解，看着网上教程一步一步做，因为教程旧、版本上有些问题，中间也踩了很多坑。">
-<meta property="og:updated_time" content="2016-10-05T03:53:35.247Z">
+<meta property="og:description" content="块级元素：&amp;lt;div&amp;gt;、 &amp;lt;p&amp;gt;、&amp;lt;h1&amp;gt;、&amp;lt;form&amp;gt;、&amp;lt;ul&amp;gt;和&amp;lt;li&amp;gt;…a {display:block;}可将内联元素转换成块状元素">
+<meta property="og:updated_time" content="2016-10-06T11:07:28.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的小站">
-<meta name="twitter:description" content="学习前端也有三个月了，一直想建立一个personal　site。趁着国庆有空就马上注册了个域名，可惜没有名字全拼。做站过程也是曲折，github　pages、hexo不了解，看着网上教程一步一步做，因为教程旧、版本上有些问题，中间也踩了很多坑。">
+<meta name="twitter:title" content="初识CSS">
+<meta name="twitter:description" content="块级元素：&amp;lt;div&amp;gt;、 &amp;lt;p&amp;gt;、&amp;lt;h1&amp;gt;、&amp;lt;form&amp;gt;、&amp;lt;ul&amp;gt;和&amp;lt;li&amp;gt;…a {display:block;}可将内联元素转换成块状元素">
   
     <link rel="alternative" href="/atom.xml" title="monkeyby" type="application/atom+xml">
   
@@ -141,7 +141,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-我的小站" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-初识CSS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -151,7 +151,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的小站
+      初识CSS
     </h1>
   
 
@@ -159,19 +159,68 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　　学习前端也有三个月了，一直想建立一个personal　site。趁着国庆有空就马上注册了个域名，可惜没有名字全拼。做站过程也是曲折，github　pages、hexo不了解，看着网上教程一步一步做，因为教程旧、版本上有些问题，中间也踩了很多坑。<a id="more"></a>最后还是看见浏览器打开了自己的网站，嘿嘿，开心。</p>
+        <p><strong>块级元素：</strong><br><code>&lt;div&gt;、 &lt;p&gt;、&lt;h1&gt;、&lt;form&gt;、&lt;ul&gt;</code>和<code>&lt;li&gt;</code>…<br><code>a {display:block;}</code>可将内联元素转换成块状元素<a id="more"></a></p>
+<p>块状元素的特点：<br>1、每个块级元素都从新的一行开始，并且其后的元素也另起一行。（真霸道，一个块级元素独占一行）<br>2、元素的高度、宽度、行高以及顶和底边距都可设置。<br>3、元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度。</p>
+<p><strong>内联元素：</strong><br><code>&lt;span&gt;、&lt;a&gt;、&lt;label&gt;、 &lt;strong&gt;</code>…<br><code>div {display:inline;}</code> 可将块状元素转换成内联元素</p>
+<p>内联元素特点：不可换行，不可设置宽、高度</p>
+<p><strong>内联块状元素：</strong><br><code>&lt;img&gt;、&lt;input&gt;</code>…</p>
+<p><code>a {display:inline-block;}</code>可将内联元素转换成内联块状元素</p>
+<p>内联块状元素特点：<br>1、不换行<br>2、高、宽度可设置</p>
+<p><strong>盒子模型：</strong><br>块状元素的p、h、table、div…都具备盒子模型</p>
+<p>盒子实际内容：元素内容content、内边距padding、元素边框border、外边距margin</p>
+<p>一个盒子实际宽度=content的宽度+padding的宽度<em>2+border的宽度</em>2+margin的宽度*2</p>
+<p>盒模型—border：<br>可设置它的粗细、样式、颜色三个属性<br>exp：<br><code>div{
+    border-width:2px;
+    border-style:solid;
+    border-color:red;
+}</code><br>也可简写：<br><code>div{
+    border:2px  solid  red;
+}</code></p>
+<p><strong>网页布局——三种布局模型：</strong><br>1、流动模型(Flow)</p>
+<p>流动模型是网页默认的布局方式，块级元素自上而下独占一行，宽度默认是100%，内联元素自左向右</p>
+<p>2、浮动模型(Float)</p>
+<p>要使块级元素同行显示，设置float和适应的宽度即可</p>
+<p>3、层模型(Layer)</p>
+<p>a、绝对定位(position: absolute)</p>
+<p> 使元素脱离文档流，若无已定位的父级元素，则相对于<code>&lt;html&gt;</code>标签进行定位；若有已定位的父级元素，则相对于最接近的父元素进行绝对定位</p>
+<p>b、相对定位(position: relative)<br>元素不脱离文档流，定位后保留原来的位置</p>
+<p>c、固定定位(position: fixed)<br>不会随浏览器窗口的滚动而变化</p>
+<p><strong>内联元素居中：</strong><br>在父元素的样式添加 text-align：center；</p>
+<p><strong>定宽块级元素居中：</strong><br>margin：0 auto；</p>
+<p><strong>不定宽块级元素居中：</strong></p>
+<p>a、lable标签有长度自适应性，可看成是默认定宽元素<br>   <code>display:lable; margin:0 auto;</code><br>d、换成内联元素，但高宽度不可设置<br>  <code>display:inline; text-align:center;</code><br>c、<br>父元素<code>{float:left;position:relative;left:50%;}</code><br>子元素<code>{position:relative;left:-50%;}</code></p>
+<p><strong>垂直居中：</strong></p>
+<p>父元素高度确定的单行文本：<br>设置父元素的 height 和 line-height 高度一致，line-height 与 font-size 的计算值之差，在 CSS 中成为“行间距”。分为两半，分别加到一个文本行内容的顶部和底部。</p>
+<p>父元素高度确定的多行文本：</p>
+<p>a、css 中有一个用于竖直居中的属性 vertical-align，在父元素设置此样式时，会对inline-block类型的子元素都有用。<br> table 、tbody、tr、中的td标签默认设置了<code>vertical-align：middle；</code>只要添加相应标签即可</p>
+<p> b、父元素<code>{
+    height:300px;
+    background:#ccc;
+    display:table-cell; /*IE8以上及Chrome、Firefox*/
+    vertical-align:middle; /*IE8以上及Chrome、Firefox*/
+}</code></p>
+<p><strong>隐性改变display类型：</strong></p>
+<ol>
+<li><p>position : absolute </p>
+</li>
+<li><p>float : left 或 float:right </p>
+</li>
+</ol>
+<p>简单来说，只要html代码中出现以上两句之一，元素的display显示类型就会自动变为以 display:inline-block（块状元素）的方式显示，当然就可以设置元素的 width 和 height 了，且默认宽度不占满父元素。</p>
+<p>CSS 规定的定位机制有三种，分别是标准文档流、浮动及绝对定位。</p>
+<p>CSS中position属性有四种：static（正常文档流）、relative（相对定位）、absoulute(绝对定位)、fixed（固定定位）。</p>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/04/我的小站/" class="archive-article-date">
-  	<time datetime="2016-10-04T11:13:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-04</time>
+      <a href="/2016/10/06/初识CSS/" class="archive-article-date">
+  	<time datetime="2016-10-06T10:54:16.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-06</time>
 </a>
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
 	</div>
 
       
@@ -184,15 +233,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/10/06/初识CSS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          初识CSS
-        
-      </div>
-    </a>
   
+    <a href="/2016/10/04/我的小站/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的小站</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
