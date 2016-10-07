@@ -27,3 +27,4 @@ body{background-color:#FFFFCC;}
 .demo_list {padding:30px 0;}
 .demo_list li{list-style:none;height:40px;line-height:40px;}
 .demo_list a {color:#2C68F5;font-size:16px;font-family: 'Microsoft YaHei',arial,tahoma,\5b8b\4f53,sans-serif;letter-spacing:2px;}
+.demo_list a:hover {text-decoration:underline;}
