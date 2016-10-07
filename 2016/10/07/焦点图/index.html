@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>焦点图&amp;轮播图&amp;myFocus库使用步骤 | monkeyby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天上传了一份焦点图的Demo，是之前看慕课网做的，然后自己又稍微做了一点优化。　　说到焦点图，不得不分享一个强大的焦点图JS库——myFocus　　引用它你只需要简单几步就可以完成多样式的图片轮播效果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="焦点图&轮播图&myFocus库使用步骤">
+<meta property="og:url" content="http://yoursite.com/2016/10/07/焦点图/index.html">
+<meta property="og:site_name" content="monkeyby">
+<meta property="og:description" content="今天上传了一份焦点图的Demo，是之前看慕课网做的，然后自己又稍微做了一点优化。　　说到焦点图，不得不分享一个强大的焦点图JS库——myFocus　　引用它你只需要简单几步就可以完成多样式的图片轮播效果。">
+<meta property="og:updated_time" content="2016-10-07T07:22:33.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="焦点图&轮播图&myFocus库使用步骤">
+<meta name="twitter:description" content="今天上传了一份焦点图的Demo，是之前看慕课网做的，然后自己又稍微做了一点优化。　　说到焦点图，不得不分享一个强大的焦点图JS库——myFocus　　引用它你只需要简单几步就可以完成多样式的图片轮播效果。">
+  
+    <link rel="alternative" href="/atom.xml" title="monkeyby" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/touxiang.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">王 楠</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">monkeyby</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/">博客</a></li>
+	        
+				<li><a href="/demo/demo_index.html">Demo</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章 </a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+            
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/monkeyby" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/3812622188/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="mail" target="_blank" href="mailto:979586812@qq.com" title="mail">mail</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">王 楠</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/images/touxiang.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">王 楠</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">monkeyby</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/">博客</a></li>
+		        
+					<li><a href="/demo/demo_index.html">Demo</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/monkeyby" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/3812622188/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto:979586812@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-焦点图" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      焦点图&amp;轮播图&amp;myFocus库使用步骤
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>　　今天上传了一份焦点图的Demo，是之前看慕课网做的，然后自己又稍微做了一点优化。<br>　　说到焦点图，不得不分享一个强大的焦点图JS库——myFocus<br>　　引用它你只需要简单几步就可以完成多样式的图片轮播效果。<a id="more"></a></p>
+<p>　　<strong>Step 1. 引入myFocus库与风格文件</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/myfocus-2.0.0.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="comment">&lt;!--引入myFocus库--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/mf-pattern/slide3D.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span><span class="comment">&lt;!--引入风格js文件--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"js/mf-pattern/slide3D.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> /&gt;</span><span class="comment">&lt;!--引入风格css文件--&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>提示:　最新的myfocus的版本，引入风格文件(js/css)可省，引入myFocus库即可。</p>
+</blockquote>
+<p>　　<strong>Step 2. 创建myFocus标准的html结构，并填充你的内容</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"boxID"</span>&gt;</span><span class="comment">&lt;!--焦点图盒子--&gt;</span></div><div class="line">  　　<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"loading"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/loading.gif"</span> <span class="attr">alt</span>=<span class="string">"请稍候..."</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  　　<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pic"</span>&gt;</span></div><div class="line">　　　　<span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">　　　　　　<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/1.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  　　　　　　<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/2.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">　　　　　　<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/3.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">　　　　　　<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/4.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">　　　　　　<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/5.jpg"</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">　　　　<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">　　<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!--pic结束--&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!--boxID结束--&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>提示:　1 类为loading的盒子起提示作用，实际可有可无。<br>　　　２ 类为pic的盒子是存放轮播的图片，li的数量即是轮播图片的数量</p>
+</blockquote>
+<p>　　<strong>Step 3. 在引入库文件之后进行简单的调用(建议在head标签结束前调用)</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">　　myFocus.set(&#123;id:'boxID'&#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><br><br>轮播图Demo展示，请<a href="https://wangnax.com/demo/demo_index.html" target="_blank" rel="external">点击这里</a><br>轮播图Demo源码，请<a href="https://github.com/monkeyby/Daily-demo/blob/master/demo/%E8%BD%AE%E6%92%AD%E5%9B%BE/focus_pic.html" target="_blank" rel="external">点击这里</a><br>慕课网轮播图免费教程，请<a href="http://www.imooc.com/learn/18" target="_blank" rel="external">点击这里</a><br>myFocus官方网站，请<a href="http://demo.jb51.net/js/myfocus/demo.html" target="_blank" rel="external">点击这里</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/10/07/焦点图/" class="archive-article-date">
+  	<time datetime="2016-10-07T05:46:18.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-07</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/06/初识CSS/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初识CSS</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 王 楠
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/"
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+    			</div>
+    	</section>
+    
+
+    
+
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
