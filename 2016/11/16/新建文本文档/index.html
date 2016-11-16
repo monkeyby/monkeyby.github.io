@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>JS高级程序设计摘记（一） | monkeyby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="声明变量时，未用var定义，该变量为当前执行环境下的全局变量。
+js没有块级作用域（花括号内为一个块级作用域），比如：在if、for中声明的变量会被添加到当前的执行环境。
+在查找变量时，会优先查找当前环境的变量，若没有，则会搜索全局变量。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS高级程序设计摘记（一）">
+<meta property="og:url" content="http://yoursite.com/2016/11/16/新建文本文档/index.html">
+<meta property="og:site_name" content="monkeyby">
+<meta property="og:description" content="声明变量时，未用var定义，该变量为当前执行环境下的全局变量。
+js没有块级作用域（花括号内为一个块级作用域），比如：在if、for中声明的变量会被添加到当前的执行环境。
+在查找变量时，会优先查找当前环境的变量，若没有，则会搜索全局变量。">
+<meta property="og:updated_time" content="2016-11-16T04:33:29.088Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS高级程序设计摘记（一）">
+<meta name="twitter:description" content="声明变量时，未用var定义，该变量为当前执行环境下的全局变量。
+js没有块级作用域（花括号内为一个块级作用域），比如：在if、for中声明的变量会被添加到当前的执行环境。
+在查找变量时，会优先查找当前环境的变量，若没有，则会搜索全局变量。">
+  
+    <link rel="alternative" href="/atom.xml" title="monkeyby" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <script src="/style.js"></script>
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/touxiang.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">王 楠</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">monkeyby</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/">博客</a></li>
+	        
+				<li><a href="/demo/demo_index.html">Demo</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章 </a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+            
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/monkeyby" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/3812622188/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="mail" target="_blank" href="mailto:979586812@qq.com" title="mail">mail</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">王 楠</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/images/touxiang.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">王 楠</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">monkeyby</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/">博客</a></li>
+		        
+					<li><a href="/demo/demo_index.html">Demo</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/monkeyby" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/3812622188/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto:979586812@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-新建文本文档" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS高级程序设计摘记（一）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>声明变量时，未用var定义，该变量为当前执行环境下的全局变量。</p>
+<p>js没有块级作用域（花括号内为一个块级作用域），比如：在if、for中声明的变量会被添加到当前的执行环境。</p>
+<p>在查找变量时，会优先查找当前环境的变量，若没有，则会搜索全局变量。<br><a id="more"></a></p>
+<p>局部变量会在函数执行后自动解除并释放内存，而全局变量最好将其值设置为null来解除引用。</p>
+<p>创建Object的俩种方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、用<span class="keyword">new</span>操作符方法</div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> object();</div><div class="line">person.name = <span class="string">"wangnan"</span>;</div><div class="line">person.age = <span class="number">24</span>;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span>、对象字面量方法</div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">	<span class="attr">name</span> : <span class="string">"wangnan"</span>,</div><div class="line">	<span class="attr">age</span> : <span class="number">24</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>访问对象的方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alert(person[<span class="string">"name"</span>]);  <span class="comment">//方括号法，可避免属性名使用了关键字或保留字带来的问题</span></div><div class="line">alert(person.name);     <span class="comment">//点方法</span></div></pre></td></tr></table></figure></p>
+<p>创建数组的方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、<span class="built_in">Array</span>构造函数</div><div class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span>、数组字面量</div><div class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>];</div></pre></td></tr></table></figure>
+<p>sort()方法比较的是字符串，一般传如自定义compare函数进行排序。</p>
+<p>创建函数方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、函数声明语法</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span> (<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span>、函数表达式</div><div class="line"></div><div class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span> (<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>函数名其实可一理解为指针，所以js没有函数重载。</p>
+<p>函数声明可以在调用函数之后，但必须用函数声明语法来声明函数。</p>
+<p>函数既可以作为一个值当参数传入，也可以返回。</p>
+<p>当用到递归算法时，可以使用arguments.callee()代替自身函数名，无论函数名是声明，都剋保证递归正常完成。</p>
+<p>this引用的函数是当前执行的环境对象，在网页的全局作用域调用时的对象是window。</p>
+<p>函数的属性：</p>
+<p>length：返回函数希望接收的命名参数的个数</p>
+<p>prototype：</p>
+<p>函数的方法：</p>
+<p>apply：设置函数体内this对象的值。</p>
+<p>创建对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">1</span>、工厂模式</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatPerson</span> (<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">	o.name = name;</div><div class="line">	o.age = age;</div><div class="line">	o.job = job;</div><div class="line">	o.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = creatPerson (<span class="string">"wangnan"</span>, <span class="number">24</span>, <span class="string">"web工程师"</span>);</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span>、构造函数模式</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.job = job;</div><div class="line">	<span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"wangnan"</span>, <span class="number">24</span> , <span class="string">"web工程师"</span>);</div></pre></td></tr></table></figure>
+<p>任何函数，只要通过new操作符来调用，那它就可以作为构造函数，如果不用new操作符来调用，那么就是普通函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span>、原型模式</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line">Person.prototype.name = <span class="string">"wangnan"</span>;</div><div class="line">Person.prototype.age = <span class="number">24</span>;</div><div class="line">Person.prototype.job = <span class="string">"web工程师"</span>;</div><div class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="number">4</span>、组合使用构造函数模式和原型模式</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.job = job;</div><div class="line">	<span class="keyword">this</span>.friends = [<span class="string">"xiaoming"</span>,<span class="string">"ligang"</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype = &#123;               <span class="comment">//更简单的原型模式写法</span></div><div class="line">	construcor : Person,</div><div class="line">	<span class="attr">sayName</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这种组合模式，既可以实例化一个对象自己的副本，也可以与其它对象共享属性与方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="number">5</span>、动态原型模式</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name,age,job</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.job = job;</div><div class="line"></div><div class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>.sayName != <span class="string">"function"</span>)&#123;</div><div class="line">	<span class="keyword">this</span>.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">		&#125;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"wangnan"</span> , <span class="number">24</span> , <span class="string">"web工程师"</span>);</div></pre></td></tr></table></figure></p>
+<p>–</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/16/新建文本文档/" class="archive-article-date">
+  	<time datetime="2016-11-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-16</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/07/焦点图/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">焦点图&amp;轮播图&amp;myFocus库使用步骤</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 王 楠
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/"
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+    			</div>
+    	</section>
+    
+
+    
+
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
