@@ -4,14 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | monkeyby</title>
+  <title>DOM中clientTop、scrollTop、offsetTop的知识 | monkeyby</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="monkeyby">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="1、元素的偏移量
+offsetHeight: 元素在垂直方向上占用空间的大小，以像素计算。offsetWidth: 元素在水平方向上占用的空间的大小，以像素计算。offsetLeft： 元素的左外边框至包含元素的左内边框之间的距离。offsetRight: 元素的右外边框至包含元素的右内边框之间的距离。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM中clientTop、scrollTop、offsetTop的知识">
+<meta property="og:url" content="http://yoursite.com/2016/11/17/元素的偏移量/index.html">
 <meta property="og:site_name" content="monkeyby">
+<meta property="og:description" content="1、元素的偏移量
+offsetHeight: 元素在垂直方向上占用空间的大小，以像素计算。offsetWidth: 元素在水平方向上占用的空间的大小，以像素计算。offsetLeft： 元素的左外边框至包含元素的左内边框之间的距离。offsetRight: 元素的右外边框至包含元素的右内边框之间的距离。">
+<meta property="og:updated_time" content="2016-11-17T06:33:40.109Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="monkeyby">
+<meta name="twitter:title" content="DOM中clientTop、scrollTop、offsetTop的知识">
+<meta name="twitter:description" content="1、元素的偏移量
+offsetHeight: 元素在垂直方向上占用空间的大小，以像素计算。offsetWidth: 元素在水平方向上占用的空间的大小，以像素计算。offsetLeft： 元素的左外边框至包含元素的左内边框之间的距离。offsetRight: 元素的右外边框至包含元素的右内边框之间的距离。">
   
     <link rel="alternative" href="/atom.xml" title="monkeyby" type="application/atom+xml">
   
@@ -137,214 +144,77 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-元素的偏移量" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
+    <h1 class="article-title" itemprop="name">
+      DOM中clientTop、scrollTop、offsetTop的知识
+    </h1>
   
+
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
       
+        <p>1、元素的偏移量</p>
+<p>offsetHeight: 元素在垂直方向上占用空间的大小，以像素计算。<br>offsetWidth: 元素在水平方向上占用的空间的大小，以像素计算。<br>offsetLeft： 元素的左外边框至包含元素的左内边框之间的距离。<br>offsetRight: 元素的右外边框至包含元素的右内边框之间的距离。<br><a id="more"></a><br>2、元素的客户端大小</p>
+<p>clientHeight = content + padding<br>clientWidth = content + padding<br>clientTop = 元素的上边框厚度<br>clientLeft = 元素的左边框厚度</p>
+<p>3、元素滚动大小</p>
+<p>scrollHeight: 在没有滚动情况下，元素内容的总高度<br>scrollwidth: 在没有滚动情况下，元素内容的总宽度<br>scrollLeft: 被隐藏的左侧内容的像素数，通过设置这个值可以改变元素的滚动位置<br>scrollTop: 被隐藏的上侧内容的像素数，通过设置这个值可以改变元素的滚动位置</p>
+<p>4、鼠标坐标</p>
+<p>event.clientX: 相对文档的水平坐标<br>event.clientY: 相对文档的垂直坐标<br>event.offsetX: 相对容器的水平坐标<br>event.offsetY: 相对容器的垂直坐标</p>
+<p>5、IE、FF的兼容性：</p>
+<p>IE6.0、FF1.06+</p>
+<p>clientWidth = width + padding<br>clientHeight = height + padding<br>offsetWidth = width + padding + border<br>offsetHeight = height + padding + border</p>
+<p>IE5.0/5.5</p>
+<p>clientWidth = width - border<br>clientHeight = height - border<br>offsetWidth = width<br>offsetHeight = height </p>
+<p>(注意：IE6一下width和height包括padding和border；margin值与上述的全无关系)</p>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/17/元素的偏移量/" class="archive-article-date">
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/17/元素的偏移量/" class="archive-article-date">
   	<time datetime="2016-11-17T04:40:35.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/17/元素的偏移量/">DOM中clientTop、scrollTop、offsetTop的知识</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/17/post/" class="archive-article-date">
-  	<time datetime="2016-11-17T04:40:35.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/17/post/">DOM中clientTop、scrollTop、offsetTop的知识</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/16/js摘记（一）/" class="archive-article-date">
-  	<time datetime="2016-11-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/16/js摘记（一）/">JS高级程序设计摘记（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/07/焦点图/" class="archive-article-date">
-  	<time datetime="2016-10-07T05:46:18.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/07/焦点图/">焦点图&amp;轮播图&amp;myFocus库使用步骤</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/06/初识CSS/" class="archive-article-date">
-  	<time datetime="2016-10-06T10:54:16.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/初识CSS/">初识CSS</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/04/我的小站/" class="archive-article-date">
-  	<time datetime="2016-10-04T11:13:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/04/我的小站/">我的小站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2016/11/17/post/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DOM中clientTop、scrollTop、offsetTop的知识</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
-    
+
+
+
+
+
+
+
+
 
 
       </div>
@@ -367,8 +237,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
