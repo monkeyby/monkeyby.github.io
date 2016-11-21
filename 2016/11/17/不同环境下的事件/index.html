@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/17/不同环境下的事件/index.html">
 <meta property="og:site_name" content="monkeyby">
 <meta property="og:description" content="在触发DOM上的某个事件时，会产生一个事件对象event,这个event包含了所有与事件有关的信息。所有的浏览器都支持event，但支持的方式不同。">
-<meta property="og:updated_time" content="2016-11-17T12:57:02.557Z">
+<meta property="og:updated_time" content="2016-11-18T19:48:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不同环境下的事件">
 <meta name="twitter:description" content="在触发DOM上的某个事件时，会产生一个事件对象event,这个event包含了所有与事件有关的信息。所有的浏览器都支持event，但支持的方式不同。">
@@ -170,6 +170,9 @@
 <p>IE中的cancelBubble属性与DOM中的stopPropagation()方法相同，都是用来停止事件冒泡的。由于IE不支持事件捕获，因而只能取消事件冒泡，但stopPropagation()方法可以同时取消俩者。</p>
 <p>4、跨浏览器的事件对象</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventUtil = &#123;</div><div class="line">	<span class="attr">addHandler</span>:<span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>)</span>&#123;</div><div class="line">	<span class="comment">//此处省略</span></div><div class="line">&#125;,</div><div class="line">	<span class="attr">getEvent</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> event ? event :<span class="built_in">window</span>.event;</div><div class="line">&#125;,</div><div class="line">	<span class="attr">getTarget</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> event.target : event.srcElement;</div><div class="line">&#125;,</div><div class="line">	<span class="attr">preventDefalut</span>: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(event.preventDefalut)&#123;</div><div class="line">	   event.preventDefalut();</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	event.returnValue = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line">&#125;,</div><div class="line">	<span class="attr">removeHandler</span>: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>)</span>&#123;</div><div class="line">	<span class="comment">//此处省略</span></div><div class="line">&#125;</div><div class="line">	stopPropagation:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(event.stopPropagation)&#123;</div><div class="line">	   event.stopPropagation();</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	event.cancelBubble = ture;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>5、事件委托</p>
+<p>对事件处理程序过多问题的解决方案就是事件委托。事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理一类型的所有事件。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span> = <span class="string">"myLinks"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span> = <span class="string">"goSomewhere"</span>&gt;</span>Go somewhere<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span> = <span class="string">"doSomething"</span>&gt;</span>Do something<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span> = <span class="string">"sayHi"</span>&gt;</span>Say hi<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> list = <span class="built_in">document</span>.getElementById(<span class="string">"myLinks"</span>);</div><div class="line"></div><div class="line">EventUtil.addHandler(list, <span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	event = EventUtil.getEvent(event);</div><div class="line">	<span class="keyword">var</span> target = EventUtil.getTarget(event);</div><div class="line"></div><div class="line">	<span class="keyword">switch</span>(target.id)&#123;</div><div class="line">		<span class="keyword">case</span> <span class="string">"doSomething"</span>:</div><div class="line">			<span class="built_in">document</span>.title = <span class="string">"I Will do something"</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"goSomeWhere"</span>:</div><div class="line">			location.href = <span class="string">"http://www.wrox.com"</span>;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">"sayHi"</span>:</div><div class="line">			alert(<span class="string">"hi"</span>);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
       
     </div>
     <div class="article-info article-info-index">
@@ -192,6 +195,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2016/11/20/angular-js摘记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Angular.js摘记
+        
+      </div>
+    </a>
   
   
     <a href="/2016/11/17/事件处理整理/" id="article-nav-older" class="article-nav-link-wrap">
@@ -264,7 +276,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+    				<a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
     			</div>
     	</section>
     
