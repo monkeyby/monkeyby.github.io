@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>jQuery摘记（二:DOM篇） | monkeyby</title>
+  <title>jQuery摘记（三：事件篇） | monkeyby</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jQuery节点创建与属性的处理：
-创建元素节点：1$(&amp;quot;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;)">
+  <meta name="description" content="click事件：
+1、$ele.click( handler(eventObject) )1234&amp;lt;div id=&quot;test&quot;&amp;gt;点击触发&amp;lt;div&amp;gt;$(&quot;#test&quot;).click(function() &amp;#123;    //this指向 div元素&amp;#125;);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery摘记（二:DOM篇）">
-<meta property="og:url" content="http://yoursite.com/2016/11/22/jQuery摘记（二）/index.html">
+<meta property="og:title" content="jQuery摘记（三：事件篇）">
+<meta property="og:url" content="http://yoursite.com/2016/11/22/jQuery摘记（三：事件篇）/index.html">
 <meta property="og:site_name" content="monkeyby">
-<meta property="og:description" content="jQuery节点创建与属性的处理：
-创建元素节点：1$(&amp;quot;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;)">
-<meta property="og:updated_time" content="2016-11-22T11:38:26.880Z">
+<meta property="og:description" content="click事件：
+1、$ele.click( handler(eventObject) )1234&amp;lt;div id=&quot;test&quot;&amp;gt;点击触发&amp;lt;div&amp;gt;$(&quot;#test&quot;).click(function() &amp;#123;    //this指向 div元素&amp;#125;);">
+<meta property="og:updated_time" content="2016-11-22T13:44:00.617Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery摘记（二:DOM篇）">
-<meta name="twitter:description" content="jQuery节点创建与属性的处理：
-创建元素节点：1$(&amp;quot;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;quot;)">
+<meta name="twitter:title" content="jQuery摘记（三：事件篇）">
+<meta name="twitter:description" content="click事件：
+1、$ele.click( handler(eventObject) )1234&amp;lt;div id=&quot;test&quot;&amp;gt;点击触发&amp;lt;div&amp;gt;$(&quot;#test&quot;).click(function() &amp;#123;    //this指向 div元素&amp;#125;);">
   
     <link rel="alternative" href="/atom.xml" title="monkeyby" type="application/atom+xml">
   
@@ -144,7 +144,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-jQuery摘记（二）" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-jQuery摘记（三：事件篇）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -154,7 +154,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      jQuery摘记（二:DOM篇）
+      jQuery摘记（三：事件篇）
     </h1>
   
 
@@ -162,41 +162,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>jQuery节点创建与属性的处理：</p>
-<p>创建元素节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;&lt;div&gt;&lt;/div&gt;&quot;)</div></pre></td></tr></table></figure></p>
+        <p>click事件：</p>
+<p>1、$ele.click( handler(eventObject) )<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span>点击触发<span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">$("#test").click(function() &#123;</div><div class="line">    //this指向 div元素</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>创建文本节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;&lt;div&gt;我是文本节点&lt;/div&gt;&quot;)</div></pre></td></tr></table></figure></p>
-<p>创建为属性节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;&lt;div id=&apos;test&apos; class=&apos;aaron&apos;&gt;我是文本节点&lt;/div&gt;&quot;)</div></pre></td></tr></table></figure></p>
-<p>.append(content)         //向每个匹配的元素内容追加内容<br>.appendTo(content)       //将需要追加的内容添加到匹配的元素上</p>
-<p>.after(content)          //在匹配元素集合中的每个元素后面插入指定内容，作为兄弟节点<br>.before(content)         //在匹配元素集合中的每个元素前面插入指定内容，作为兄弟节点</p>
-<p>.prepend()               //向每个匹配的元素内部添加前置内容<br>.prependTo()             //将需要添加的前置内容加到每个匹配的元素</p>
-<p>.insertBefore()           //在目标元素前面插入集合中每个匹配的元素<br>.insertAfter()            //在目标元素后面插入集合中每个匹配的元素</p>
-<p>$(div).empty()            //清空内部的html代码，保留div</p>
-<p>$(div).remove()           //移除div及内部内容</p>
-<p>.detach()                 //删除页面上的节点，但是节点上的数据与事件不会丢失</p>
-<p>.clone()                  //只克隆结构<br>.clone(true)              //结构、事件与数据都克隆</p>
-<p>.replaceWith( newContent )    //用提供的内容替换集合中所有匹配的元素并且返回被删除元素的集合<br>.replaceAll( target )         //用集合的匹配元素替换每个目标元素      </p>
-<p>$(“p”).wrap(“<div></div>“)               //给p元素添加一个div父元素<br>$(‘p’).unwarp()                          //将p元素的父级元素删除<br>$(‘p’).wrapAll(‘<div></div>‘)            //给所有p元素增加一个div包裹</p>
-<p>$(‘div’).wrapInner(‘</p><p></p>‘)            //给所有div里层包裹一个p<p></p>
-<p>遍历：</p>
-<p>.children()                //无参数，可传入选择器，只遍历儿子辈</p>
-<p>.find()                    //遍历所有后代关系</p>
-<p>.perent()                  //只会向上查找一级</p>
-<p>.parents()                 //一直向上查找，直到祖先节点，返回是一个集合对象</p>
-<p>.closest()                 //从当前元素开始向上查找，找到一个就停止</p>
-<p>.next()                    //查找紧邻的后面同辈元素的元素集合</p>
-<p>.prev()                    //查找紧邻的前面同辈元素的元素集合</p>
-<p>.siblings()                //查找指定元素集合中每一个元素的同辈元素</p>
-<p>.add()                     //参数可以几乎接受任何的$()，包括一个jQuery选择器表达式，DOM元素，或HTML片段引用</p>
-<p>.each():</p>
-<p>$(“li”).each(function(index, element) {<br>     index 索引 0,1<br>     element是对应的li节点 li,li<br>     this 指向的是li<br>})</p>
+<p>2、$ele.click( [eventData ], handler(eventObject) )</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span>点击触发<span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">$("#test").click(11111,function(e) &#123;</div><div class="line">    //this指向 div元素</div><div class="line">    //e.date  =&gt; 11111 传递数据</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>mouse事件：<br>1、$ele.mousedown( handler(eventObject) )<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span>点击触发<span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">$("#test").mousedown(function() &#123;</div><div class="line">    //this指向 div元素</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>2、$ele.mousedown( [eventData ], handler(eventObject) )</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span>点击触发<span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">$("#test").mousedown(11111,function(e) &#123;</div><div class="line">    //this指向 div元素</div><div class="line">    //e.date  =&gt; 11111 传递数据</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>提示：mouseup、mousemove、mouseover、mouseout、keydown、keyup、keypress同理，不再赘述,mouseenter、mouseleave不会冒泡处理问题</p>
+<p>.hover(function1,function2)              //使用hover方法，鼠标移入时触发func1，移除触发func2</p>
+<p>.focusin()                               //鼠标聚焦，多用于input</p>
+<p>.focusout()                              //鼠标点击失去焦点</p>
+<p>注意：focusin和focuout支持冒泡，blur和focus不支持冒泡</p>
+<p>.change()                                //监听input、textarea、select是否改变</p>
+<p>.select()                                //当元素的value被选中时触发</p>
+<p>.submit()                                //提交表单时触发</p>
+<p>on的多事件绑定：</p>
+<p>基本用法：.on( events ,[ selector ] ,[ data ] )</p>
+<p>$(“#elem”).click(function(){})  //快捷方式<br>$(“#elem”).on(‘click’,function(){}) //on方式</p>
+<p>多个事件绑定同一个函数<br> $(“#elem”).on(“mouseover mouseout”,function(){ });</p>
+<p>多个事件绑定不同函数<br>$(“#elem”).on({<br>    mouseover:function(){},<br>    mouseout:function(){},<br>});</p>
+<p>on()的高级用法：on的委托机制<br>.on( events ,[ selector ] ,[ data ], handler(eventObject) )<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">a</span>&gt;</span>目标节点<span class="tag">&lt;/<span class="name">a</span>&gt;</span> //点击在这个元素上</div><div class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>$(“div”).on(“click”,”p”,fn)          //事件绑定在最上层div元素上，当用户触发在a元素上，事件将往上冒泡，一直会冒泡在div元素上。如果提供了第二参数，那么事件在往上冒泡的过程中遇到了选择器匹配的元素，将会触发事件回调函数</p>
+<p>.off()                               //不加参数默认删除所有事件</p>
+<p>event.type：获取事件的类型</p>
+<p>event.pageX 和 event.pageY：获取鼠标当前相对于页面的坐标</p>
+<p>event.preventDefault() 方法：阻止默认行为</p>
+<p>event.stopPropagation() 方法：阻止事件冒泡</p>
+<p>event.which：获取在鼠标单击时，单击的是鼠标的哪个键</p>
+<p>event.currentTarget : 在事件冒泡过程中的当前DOM元素</p>
+<p>this和event.target的区别：<br>js中事件是会冒泡的，所以this是可以变化的，但event.target不会变化，它永远是直接接受事件的目标DOM元素；</p>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/11/22/jQuery摘记（二）/" class="archive-article-date">
-  	<time datetime="2016-11-22T04:39:57.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-22</time>
+      <a href="/2016/11/22/jQuery摘记（三：事件篇）/" class="archive-article-date">
+  	<time datetime="2016-11-22T11:44:31.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-22</time>
 </a>
       
 	<div class="article-tag tagcloud">
@@ -214,18 +217,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/11/22/jQuery摘记（三：事件篇）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          jQuery摘记（三：事件篇）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/21/jQuery摘记(一)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jquery摘记（一：样式篇）</div>
+    <a href="/2016/11/22/jQuery摘记（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery摘记（二:DOM篇）</div>
       <i class="icon-circle-right"></i>
     </a>
   
