@@ -4,14 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives: 2016/10 | monkeyby</title>
+  <title>jQuery摘记（二:DOM篇） | monkeyby</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="monkeyby">
-<meta property="og:url" content="http://yoursite.com/archives/2016/10/index.html">
+  <meta name="description" content="jQuery节点创建与属性的处理：
+创建元素节点：$(““)
+创建文本节点：$(“我是文本节点“)
+创建为属性节点：$(“我是文本节点“)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery摘记（二:DOM篇）">
+<meta property="og:url" content="http://yoursite.com/2016/11/22/jQuery摘记（二）/index.html">
 <meta property="og:site_name" content="monkeyby">
+<meta property="og:description" content="jQuery节点创建与属性的处理：
+创建元素节点：$(““)
+创建文本节点：$(“我是文本节点“)
+创建为属性节点：$(“我是文本节点“)">
+<meta property="og:updated_time" content="2016-11-22T10:55:49.197Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="monkeyby">
+<meta name="twitter:title" content="jQuery摘记（二:DOM篇）">
+<meta name="twitter:description" content="jQuery节点创建与属性的处理：
+创建元素节点：$(““)
+创建文本节点：$(“我是文本节点“)
+创建为属性节点：$(“我是文本节点“)">
   
     <link rel="alternative" href="/atom.xml" title="monkeyby" type="application/atom+xml">
   
@@ -137,118 +150,91 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-jQuery摘记（二）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
+    <h1 class="article-title" itemprop="name">
+      jQuery摘记（二:DOM篇）
+    </h1>
   
+
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
       
+        <p>jQuery节点创建与属性的处理：</p>
+<p>创建元素节点：$(“<div></div>“)</p>
+<p>创建文本节点：$(“<div>我是文本节点</div>“)</p>
+<p>创建为属性节点：$(“<div id="test" class="aaron">我是文本节点</div>“)<br><a id="more"></a></p>
+<p>.append(content)         //向每个匹配的元素内容追加内容<br>.appendTo(content)       //将需要追加的内容添加到匹配的元素上</p>
+<p>.after(content)          //在匹配元素集合中的每个元素后面插入指定内容，作为兄弟节点<br>.before(content)         //在匹配元素集合中的每个元素前面插入指定内容，作为兄弟节点</p>
+<p>.prepend()               //向每个匹配的元素内部添加前置内容<br>.prependTo()             //将需要添加的前置内容加到每个匹配的元素</p>
+<p>.insertBefore()           //在目标元素前面插入集合中每个匹配的元素<br>.insertAfter()            //在目标元素后面插入集合中每个匹配的元素</p>
+<p>$(div).empty()            //清空内部的html代码，保留div</p>
+<p>$(div).remove()           //移除div及内部内容</p>
+<p>.detach()                 //删除页面上的节点，但是节点上的数据与事件不会丢失</p>
+<p>.clone()                  //只克隆结构<br>.clone(true)              //结构、事件与数据都克隆</p>
+<p>.replaceWith( newContent )    //用提供的内容替换集合中所有匹配的元素并且返回被删除元素的集合<br>.replaceAll( target )         //用集合的匹配元素替换每个目标元素      </p>
+<p>$(“p”).wrap(“<div></div>“)               //给p元素添加一个div父元素<br>$(‘p’).unwarp()                          //将p元素的父级元素删除<br>$(‘p’).wrapAll(‘<div></div>‘)            //给所有p元素增加一个div包裹</p>
+<p>$(‘div’).wrapInner(‘</p><p></p>‘)            //给所有div里层包裹一个p<p></p>
+<p>遍历：</p>
+<p>.children()                //无参数，可传入选择器，只遍历儿子辈</p>
+<p>.find()                    //遍历所有后代关系</p>
+<p>.perent()                  //只会向上查找一级</p>
+<p>.parents()                 //一直向上查找，直到祖先节点，返回是一个集合对象</p>
+<p>.closest()                 //从当前元素开始向上查找，找到一个就停止</p>
+<p>.next()                    //查找紧邻的后面同辈元素的元素集合</p>
+<p>.prev()                    //查找紧邻的前面同辈元素的元素集合</p>
+<p>.siblings()                //查找指定元素集合中每一个元素的同辈元素</p>
+<p>.add()                     //参数可以几乎接受任何的$()，包括一个jQuery选择器表达式，DOM元素，或HTML片段引用</p>
+<p>.each():</p>
+<p>$(“li”).each(function(index, element) {<br>     index 索引 0,1<br>     element是对应的li节点 li,li<br>     this 指向的是li<br>})</p>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/07/焦点图/" class="archive-article-date">
-  	<time datetime="2016-10-07T05:46:18.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-07</time>
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/22/jQuery摘记（二）/" class="archive-article-date">
+  	<time datetime="2016-11-22T04:39:57.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/07/焦点图/">焦点图&amp;轮播图&amp;myFocus库使用步骤</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/06/初识CSS/" class="archive-article-date">
-  	<time datetime="2016-10-06T10:54:16.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/初识CSS/">初识CSS</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/04/我的小站/" class="archive-article-date">
-  	<time datetime="2016-10-04T11:13:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/04/我的小站/">我的小站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2016/11/21/jQuery摘记(一)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jquery摘记（一：样式篇）</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
-    
+
+
+
+
+
+
+
+
 
 
       </div>
@@ -271,8 +257,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
