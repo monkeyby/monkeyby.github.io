@@ -4,14 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | monkeyby</title>
+  <title>jQuery摘记（四：动画篇） | monkeyby</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="monkeyby">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="$elem.hide(time,callback)          //不加参数直接隐藏，可加fast/slow/具体时间，也可加回调函数$elem.show(time,callback)          //与hide同理
+$elem.toggle()                     //在hide和show之间切换">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery摘记（四：动画篇）">
+<meta property="og:url" content="http://yoursite.com/2016/11/23/jQuery摘记（四：动画篇）/index.html">
 <meta property="og:site_name" content="monkeyby">
+<meta property="og:description" content="$elem.hide(time,callback)          //不加参数直接隐藏，可加fast/slow/具体时间，也可加回调函数$elem.show(time,callback)          //与hide同理
+$elem.toggle()                     //在hide和show之间切换">
+<meta property="og:updated_time" content="2016-11-23T12:06:30.139Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="monkeyby">
+<meta name="twitter:title" content="jQuery摘记（四：动画篇）">
+<meta name="twitter:description" content="$elem.hide(time,callback)          //不加参数直接隐藏，可加fast/slow/具体时间，也可加回调函数$elem.show(time,callback)          //与hide同理
+$elem.toggle()                     //在hide和show之间切换">
   
     <link rel="alternative" href="/atom.xml" title="monkeyby" type="application/atom+xml">
   
@@ -137,90 +144,77 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-jQuery摘记（四：动画篇）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/06/初识CSS/" class="archive-article-date">
-  	<time datetime="2016-10-06T10:54:16.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/06/初识CSS/">初识CSS</a>
+    <h1 class="article-title" itemprop="name">
+      jQuery摘记（四：动画篇）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/10/04/我的小站/" class="archive-article-date">
-  	<time datetime="2016-10-04T11:13:23.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-04</time>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>$elem.hide(time,callback)          //不加参数直接隐藏，可加fast/slow/具体时间，也可加回调函数<br>$elem.show(time,callback)          //与hide同理</p>
+<p>$elem.toggle()                     //在hide和show之间切换<br><a id="more"></a><br>.slideDown(time,callback)          //用滑动动画显示一个匹配元素<br>.slideUp(time,callback)            //与slideDown同理<br>.slideToggle(time,callback)        //在slideDown与slideUp之间切换</p>
+<p>fadeOut(time,callback)             //淡出<br>fadeIn(time,callback)              //淡入<br>fadeToggle(time,callback)          //淡入与淡出切换<br>fadeTo(time,opacity,callback)      //自定义淡出淡入的透明度</p>
+<p>1、stop()  动画队列如果有多个动画,停止当前执行的动画,开始下一个动画</p>
+<p>2、stop(true)  真正的停止,当前动画停止,队列里后续动画也不执行</p>
+<p>3、stop(true,true)  当前动画动作停止，并且直接展示所有动画完成后的最终状态</p>
+<p>jQuery.each(array, callback )<br>jQuery.each(object, callback )</p>
+<p>jQuery.inArray( value, array ,[ fromIndex ] )   //查找value在array中的位置，可以通过fromIndex规定查找的起始值，默认数组是0开始</p>
+<p>jQuery.trim()             //用于去除字符串两端的空白字符</p>
+<p>.get( [index ] )          //单独获取合集中的的某一个元素</p>
+<p>.index()                  //语法：参数接受一个jQuery或者dom对象作为查找的条件，返回集合的索引值</p>
+<p>.animate( properties ,[ duration ], [ easing ], [ complete ] )<br>.animate( properties, options )</p>
+<p>properties 对象{},注意：所有指定的属性必须用骆驼形式<br>duration (可选)三种预定速度之一的字符串(“slow”, “normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)<br>easing (可选)String要使用的擦除效果的名称(需要插件支持).默认jQuery提供”linear” 和 “swing”<br>complete (可选)Function在动画完成时执行的函数</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/23/jQuery摘记（四：动画篇）/" class="archive-article-date">
+  	<time datetime="2016-11-23T05:08:13.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/04/我的小站/">我的小站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/22/jQuery摘记（三：事件篇）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery摘记（三：事件篇）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
+
+
 
 
       </div>
@@ -243,8 +237,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
