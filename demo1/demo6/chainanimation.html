@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>链式动画</title>
+<style>
+*{padding:0;
+margin:0;}
+
+ul,li{list-style:none;}
+
+ul li{
+	width:200px;
+	height:100px;
+	background:#0CF;
+	margin-bottom:20px;
+	border:10px solid #000; 
+	}
+.div1 {height:40px;line-height:40px;font-size:24px;color:#000;text-align:center;font-weight:bold;}
+</style>
+<script>
+window.onload = function(){
+	var aLi = document.getElementsByTagName("li");
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].timer=null;
+		aLi[i].onmouseover = function (){
+			var that=this;                         //注意this的作用域，在子作用域中父作用域的this不起作用
+			
+			startMove(that,{width:600,height:200},function(){
+				startMove(that,{opacity:30});
+				});
+			
+			/*startMove(that,400,"width",function(){ //链式动画
+				startMove(that,200,"height");
+				});*/
+			}
+		aLi[i].onmouseout = function (){
+			var that=this;
+			
+			startMove(that,{width:200,height:100},function(){
+				startMove(that,{opacity:100});
+				});
+			
+			/*startMove(that,100,"height",function(){
+				startMove(that,200,"width");
+				});*/
+			}
+		}
+		
+	}
+//	var timer=null;
+function startMove(obj,json,fn){
+	clearInterval(obj.timer);
+	obj.timer = setInterval(function(){
+		var flag = true;
+		for(var para in json){
+		//1.取当前值
+		var icur = 0;
+		if(para == "opacity"){
+			icur = Math.round(parseFloat(getStyle(obj,para))*100);
+			}else{
+				icur = parseInt(getStyle(obj,para));
+				}
+		//2.算速度
+		var speed = (json[para]-icur)/10;
+		speed = speed>0?Math.ceil(speed) : Math.floor(speed);
+		//3.检测停止
+		if (icur !=json[para]){
+			flag= false;
+			
+			}
+		if(para == "opacity"){
+					obj.style.filter = "alpha(opacity:"+(icur+speed)+")";
+					obj.style.opacity = (icur+speed)/100;
+					}
+		else{
+				obj.style[para] =icur+speed+"px";
+			}
+		}
+		if(flag){
+			clearInterval(obj.timer);
+			if(fn){
+				fn();
+				}
+			}
+		},30)
+	}
+	
+	function getStyle (obj,attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+			
+			}else{
+				return getComputedStyle(obj,false)[attr];
+				}
+		}
+</script>
+</head>
+
+<body>
+<div class="div1">请将鼠标悬浮在矩形上方</div>
+<ul>
+<li style="background:#0F0"></li>
+<li></li>
+<li style="background:#FF3"></li>
+</ul>
+</body>
+</html>
