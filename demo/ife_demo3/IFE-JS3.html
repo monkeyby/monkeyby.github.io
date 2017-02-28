@@ -1,0 +1,163 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!-- 
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+<script type="text/javascript">
+
+/**
+ * getData方法
+ * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+ * 返回一个数组，格式见函数中示例
+ */
+function getData() {
+  /*
+  coding here
+  */
+  var ul = document.getElementById("source");
+  var li = ul.getElementsByTagName("li");
+
+  //定义一个二维数组
+  var data = new Array();
+  for (var k = 0 ; k < 7; k++){
+  	data[k] = new Array();
+  		for (var j = 0 ; j < 2 ; j ++){
+  			data[k][j] = "";
+  		}
+  }
+
+  //循环li标签，将需要的数据放进data数组
+  for (var i = 0; i < li.length; i++){
+
+  	var b = li[i].getElementsByTagName("b");
+
+  	var str = li[i].innerHTML;
+
+  	data[i][0] = str.substring(0,2);
+  	data[i][1] = b[0].innerHTML;
+  }
+
+  /*
+  data = [
+    ["北京", 90],
+    ["北京", 90]
+    ……
+  ]
+  */
+
+  return data;
+
+}
+
+/**
+ * sortAqiData
+ * 按空气质量对data进行从小到大的排序
+ * 返回一个排序后的数组
+ */
+function sortAqiData(data) {
+
+	var k = data.length;
+	var j = data[0].length;
+
+	var data_sort = new Array();
+ 	 for (var k = 0 ; k < 7; k++){
+  		data_sort[k] = new Array();
+  			for (var j = 0 ; j < 2 ; j ++){
+  				data_sort[k][j] = "";
+  			}
+  	}
+
+  	data_sort = data.sort(function(a,b){
+  		return a[1] - b[1];
+  	})
+
+  	return data_sort;
+}
+
+/**
+ * render
+ * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+ * 格式见ul中的注释的部分
+ */
+function render(data) {
+
+	var resort = document.getElementById("resort");
+	var num = ["一","二","三","四","五","六","七"];
+
+	for (var i = 0 ; i < data.length ; i++){
+
+		var para_b = document.createElement("b");
+		para_b.innerHTML = data[i][1];
+
+		var para = document.createElement("li");
+		var node = document.createTextNode("第" + num[i] + "名：" +  data[i][0] + "空气质量：" );
+
+		para.appendChild(node);
+		para.appendChild(para_b);
+		resort.appendChild(para);
+
+	}
+}
+
+function btnHandle() {
+  var aqiData = getData();
+  aqiData = sortAqiData(aqiData);
+  render(aqiData);
+}
+
+function init() {
+
+  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+  document.getElementById("sort-btn").onclick = function (){
+  	btnHandle();
+  }
+
+
+  //调试显示程序
+  //view();
+}
+
+init();
+
+function view(){
+
+	//调试成功 getData函数无问题
+	var data = getData();
+	for (x in data){
+		alert(data[x][0] + data[x][1]);
+	}
+
+	//调试成功 sortAqiData无问题
+	var data = getData();
+	var data_sort = sortAqiData(data);
+	for (x in data_sort){
+		alert(data_sort[x][0] + data_sort[x][1]);
+	}
+}
+</script>
+</body>
+</html>
