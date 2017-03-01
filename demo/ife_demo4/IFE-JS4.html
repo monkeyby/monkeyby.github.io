@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IFE - JS - 4</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style-type: none;
+			float:left;
+			width:50px;
+			height:50px;
+			background: red;
+			color:white;
+			font-size: 50px;
+			margin-top: 10px;
+			margin-right: 10px;
+
+		}
+
+	</style>
+</head>
+<body>
+	<form>
+		<input type="text" name="" id = "input_area">
+		<input type="button" name="" id = "left_in" value="左侧加入">
+		<input type="button" name="" id = "right_in" value="右侧加入">
+		<input type="button" name="" id = "left_out" value="左侧移出">
+		<input type="button" name="" id = "right_out" value="右侧移出">
+	</form>
+	<ul id = "ul">
+		
+	</ul>
+</body>
+<script type="text/javascript">
+
+	(function(){
+
+		var input = document.getElementById("input_area");
+		var ul = document.getElementById("ul");
+
+		//左侧加入
+	 	function left_in(){
+
+	 		var oLi = ul.getElementsByTagName("li");
+
+	 		var para = document.createElement("li");
+
+	 		if(isNaN(input.value)){
+	 			alert("请输入数字！");
+	 		}else{
+	 			var node = document.createTextNode(input.value);
+	 		}
+	 		
+	 		para.appendChild(node);
+
+	 		if(oLi.length > 0){
+
+	 			ul.insertBefore(para, oLi[0]);
+
+	 		}else{
+
+	 			ul.appendChild(para);
+
+	 		}
+	 	}
+
+	 	//右侧加入
+	 	function right_in(){
+
+	 		var para = document.createElement("li");
+
+	 		if(isNaN(input.value)){
+	 			alert("请输入数字！");
+	 		}else{
+	 			var node = document.createTextNode(input.value);
+	 		}
+	 		
+	 		para.appendChild(node);
+	 		ul.appendChild(para);
+
+	 	}
+
+	 	//左侧移除
+	 	function left_out(){
+
+	 		if(ul.childNodes.length == 0){
+
+	 			alert("您还没有队列项！请插入。")
+
+	 		}else{
+
+	 			ul.removeChild(ul.childNodes[0]);
+
+	 		}
+	 	}
+	 	//右侧移除
+	 	function right_out(){
+	 		if(ul.childNodes.length == 0){
+
+	 			alert("您还没有队列项！请插入。")
+
+	 		}else{
+
+	 			ul.removeChild(ul.childNodes[ul.childNodes.length - 1 ]);
+
+	 		}
+	 	}
+
+
+	 	//鼠标点击删除
+	 	function removeLi (event){
+
+	 		var event = event ? event : window.event;
+	 		var target = event.target ? event.target : event.srcElement;
+
+	 		ul.removeChild(target);
+	 	}
+
+	 	//初始化函数
+		function init(){
+			deBug();
+
+		}
+
+		init();
+
+		//调试函数
+		function deBug(){
+
+			var left_btnin = document.getElementById("left_in");
+
+			var right_btnin = document.getElementById("right_in");
+
+			var left_btnout = document.getElementById("left_out");
+
+			var right_btnout = document.getElementById("right_out");
+
+			left_btnin.onclick = function(){
+
+				left_in();
+
+			}
+
+			right_btnin.onclick = function(){
+
+				right_in();
+
+			}
+
+			left_btnout.onclick = function(){
+
+				left_out();
+
+			}
+
+			right_btnout.onclick = function(){
+
+				right_out();
+
+			}
+				
+					ul.onclick = function(event){
+					removeLi(event);
+			
+			}
+		}
+
+	})()
+
+</script>	
+</html>
