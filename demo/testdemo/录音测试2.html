@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="file" accept="video/*;capture=camcorder">
+	<input type="file" accept="audio/*;capture=microphone">
+
+	
+	<script type="text/javascript">
+		window.AudioContext = window.AudioContext ||
+                      window.webkitAudioContext;
+
+		var context = new AudioContext();
+
+		navigator.getUserMedia({audio: true}, function(stream) {
+		  var microphone = context.createMediaStreamSource(stream);
+		  var filter = context.createBiquadFilter();
+
+		  // microphone -> filter -> destination.
+		  microphone.connect(filter);
+		  filter.connect(context.destination);
+		}, errorCallback);
+	</script>
+</body>
+
+</html>
