@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>申请页面</title>
+	<meta charset="utf-8">
+	<!-- 引入 Vue -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#imgList {
+			width: 960px;
+			margin: 0 auto;
+		}
+		#imgList li{
+			list-style: none;
+			float: left;
+			margin:10px;
+		}
+		#imgList li img{
+			width: 300px;
+			height: 300px;
+
+		}
+		#bigPic {
+			width:600px;
+			height: 600px;
+			line-height: 600px;
+			
+			position: absolute;
+			left:50%;
+			margin-left: -300px;
+			top:50%;
+			margin-bottom: -300px;
+			display: none;
+			z-index: 9;
+		}
+		.clear{ 
+			clear:both
+		} 
+		
+	</style>
+</head>
+<body>
+
+	<!--邮箱输入-->
+	<div  id="app" class="step1">
+		<h2>1、请填写你的邮箱信息</h2> 
+		<form action="#" method="get">
+			<input type="email" name="email" value="邮箱" />
+			<input type="submit" v-on:click="respond" value="申请" />
+		</form>
+	</div>
+
+	<!--图片预览-->
+	<div class="step2">
+		<h2>2、请根据下图所示，填写你的表格</h2>
+		<div id="imgList">
+			<ul id="ul">
+				<li><img src="http://oepjusog7.bkt.clouddn.com/cont_1.jpg" /></li>
+				<li><img src="http://oepjusog7.bkt.clouddn.com/cont_2.jpg" /></li>
+				<li><img src="http://oepjusog7.bkt.clouddn.com/cont_3.jpg" /></li>
+				<li><img src="http://oepjusog7.bkt.clouddn.com/cont_4.jpg" /></li>
+				<li><img src="http://oepjusog7.bkt.clouddn.com/cont_5.jpg" /></li>
+				<li><img src="http://oepjusog7.bkt.clouddn.com/cont_6.jpg" /></li>
+				<li><img src="http://oepjusog7.bkt.clouddn.com/cont_7.jpg" /></li>
+				<div class="clear"></div> 
+			</ul>
+			<div id="bigPic">
+				<img id = "bP" src="#" />
+			</div>
+		</div>
+	</div>
+
+	<!--拍照上传-->
+	<div class="step3">
+		<h2>3、请点击拍照按钮拍照</h2>
+		<video id="video" autoplay></video> </br>
+		<input type="button" id="snap"  value="拍 照" /></br>
+		<canvas style="" id="canvas" ></canvas>
+	</div>
+	<!--语音上传-->
+	<div class="step4">
+		<h2>4、请长按录音按钮录音</h2>
+	</div>
+
+	<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+
+			},
+			methods: {
+				respond:function(){
+					alert("点击成功,//申请成功");
+				}
+			}
+		})
+	</script>
+
+
+
+	<!--图片预览js-->
+	<script type="text/javascript">
+		(function(){
+			var img = document.getElementById("ul");
+			var bP = document.getElementById("bP");
+			var bigPic = document.getElementById("bigPic");
+			//var img = document.getElementsByTagName('img');
+			//alert(img);
+
+			function getTarget (event){
+				var e =  event ? event : window.event;
+				var target = e.target ? e.target : e.srcElement;
+				return target;
+			}
+
+				img.onclick = function(event){
+	
+					//alert(bigPic.src);
+					var e =  event ? event : window.event;
+					var target = e.target ? e.target : e.srcElement;
+					//alert(bP.src);
+					bP.src = target.src;
+					bigPic.style.display = "block";
+				}
+
+				bP.onclick = function(event){
+
+					var e =  event ? event : window.event;
+					var target = e.target ? e.target : e.srcElement;
+					bigPic.style.display = "none";
+				}
+			})()
+
+	</script>
+
+	<!--拍照上传js-->
+	<script type="text/javascript"> 
+
+	navigator.getUserMedia = navigator.getUserMedia ||
+	                         navigator.webkitGetUserMedia ||
+	                         navigator.mozGetUserMedia;
+
+	if (navigator.getUserMedia) {
+	   navigator.getUserMedia({ audio: true, video: { width: 640, height: 360 } },
+	      function(stream) {
+	         var video = document.getElementById('video');
+	         video.src = window.URL.createObjectURL(stream);
+	         video.onloadedmetadata = function(e) {
+	           video.play();
+	         };
+	      },
+	      function(err) {
+	         console.log("The following error occurred: " + err.name);
+	      }
+	   );
+	} else {
+	   console.log("getUserMedia not supported");
+	}  
+		
+	document.getElementById("snap")
+	        .addEventListener("click", function() {//按钮绑定监听事件
+	            var canvans = document.getElementById("canvas"),//调用canvas接口
+	            context = canvas.getContext("2d");
+	            context.drawImage(video, 0, 0, 640, 480);//调用canvas接口的drawImage方法绘制当前video标签中的静态图片，其实就是截图
+
+	            var imgData = canvans.toDataURL();//获取图片的base64格式的数据
+	            var base64Data = imgData.substr(22);//在前端截取22位之后的字符串作为图像数据
+	                //上传数据到服务器
+	            });
+	
+</script> 
+
+</body>
+ 
+</html>
